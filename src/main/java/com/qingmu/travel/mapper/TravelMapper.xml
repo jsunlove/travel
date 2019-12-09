@@ -1,0 +1,75 @@
+<!--
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qingmu.travel.mapper.TravelMapper">
+
+    <insert id="addTravel" parameterType="com.qingmu.travel.pojo.Travel">
+        INSERT INTO `test`.`business` (`id`, `space`, `item`, `start_date`, `stop_date`, `travel_days`, `travel_person`, `finish_work`, `problem_sum`, `file_name`, `file_path`, `file_uuid`)
+        VALUES (null, #{space}, #{item}, #{start_date}, #{stop_date}, #{travel_days}, #{travel_person}, #{finish_work}, #{problem_sum}, #{file_name},#{file_path},#{file_uuid});
+    </insert>
+
+    <delete id="deleteTravel" parameterType="int">
+        DELETE FROM business WHERE id = #{id};
+    </delete>
+
+    <update id="updateTravel" parameterType="com.qingmu.travel.pojo.Travel">
+        UPDATE `test`.`business` SET
+            <if test="space != null">
+                `space`=#{space},
+            </if>
+            <if test="item != null">
+                `item`=#{item},
+            </if>
+            <if test="start_date != null">
+                `start_date`=#{start_date},
+            </if>
+            <if test="travel_days != null">
+                `travel_days`=#{travel_days},
+            </if>
+            <if test="travel_person != null">
+                `travel_person`=#{travel_person},
+            </if>
+            <if test="finish_work != null">
+                `finish_work`=#{finish_work},
+            </if>
+            <if test="problem_sum != null">
+                `problem_sum`=#{problem_sum}
+            </if>
+            <if test="file_name != null">
+                `file_name`=#{file_name},
+            </if>
+            <if test="file_path != null">
+                `file_path`=#{file_path},
+            </if>
+            <if test="file_uuid != null">
+                `file_uuid`=#{file_uuid}
+            </if>
+        WHERE (`id`=#{id});
+    </update>
+
+    <select id="getTravelById" parameterType="int" resultType="com.qingmu.travel.pojo.Travel">
+        SELECT business.* FROM business WHERE id=#{id};
+    </select>
+
+    <select id="getAllTravel" resultType="com.qingmu.travel.pojo.Travel">
+        SELECT business.* FROM business;
+    </select>
+
+    <select id="getTravelByRequire" parameterType="com.qingmu.travel.pojo.Travel" resultType="com.qingmu.travel.pojo.Travel">
+        select business.* from business where 1=1 and
+            <if test="item != null and item != ''">
+                item = #{item}
+            </if>
+            <if test="start_date != null and start_date != ''">
+                start_date = #{start_date}
+            </if>
+            <if test="stop_date != null and stop_date != ''">
+                stop_date = #{stop_date}
+            </if>
+    </select>
+
+</mapper>
+-->

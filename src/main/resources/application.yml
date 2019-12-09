@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: true
+
+mybatis:
+  mapper-locations: classpath\:com/qingmu/travel/mapper/*.xml
+  type-aliases-package: com.qingmu.travel.pojo
+  configuration:
+    auto-mapping-behavior: full

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<form action="" th:action="@{/addTravel}" method="post">
+    新增
+    <p>出差地点:<input type="text" name="space" value=""/></p>
+    <p>项目类型:<input type="text" name="item" value=""/></p>
+    <p>出差日期:<input type="date" name="start_date" value=""/></p>
+    <p>结束日期:<input type="date" name="stop_date" value=""/></p>
+
+    <p>出差天数:<input type="text" name="travel_days" value="" οninput="value=value.replace(/[^\d]/g,'')"/></p>
+    <p>出差人员:<input type="text" name="travel_person" value=""/></p>
+    <p>完成工作:<input type="text" name="finish_work" value=""/></p>
+    <p>问题总结:<input type="text" name="problem_sum" value=""/></p>
+    <p>附件名称:<input readonly="true" name="file_name" value=""/></p>
+    <p>上传附件：<button onclick="">选择文件</button></p>
+    <p>
+        <input type="submit" value="保存" />
+        |
+        <input type="submit" value="退出"/>
+    </p>
+</form>
+
+
+</body>
+</html>

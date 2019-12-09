@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>SpringBoot模版渲染</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<p>
+<a href="" th:href="@{/addEdit}">新增</a>
+<a href="" th:href="@{/export}">导出</a>
+</p>
+<p>
+
+    <form action="" th:action="@{/travelByRequire}" method="post">
+        <p>按照项目类型查询:
+        <input type="text" name="item" value=""/>按照时间查询:
+        <input type="date" name="start_date" value=""/>-
+        <input type="date" name="stop_date" value=""/>
+        <input type="submit" value="查询" />
+        </p>
+    </form>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>出差地点</th>
+            <th>项目类型</th>
+            <th>出差日期</th>
+            <th>结束日期</th>
+            <th>出差天数</th>
+            <th>出差人员</th>
+            <th>完成工作</th>
+            <th>问题总结</th>
+            <th>操作</th>
+        </tr>
+            <!--/*@thymesVar id="travel" type="travel"*/-->
+            <tr th:each="travel:${travelList}">
+                <td th:text="${travel.space}"></td>
+                <td th:text="${travel.item}"></td>
+                <td th:text="${travel.start_date}"></td>
+                <td th:text="${travel.stop_date}"></td>
+                <td th:text="${travel.travel_days}"></td>
+                <td th:text="${travel.travel_person}"></td>
+                <td th:text="${travel.finish_work}"></td>
+                <td th:text="${travel.problem_sum}"></td>
+                <td>
+                    <a th:href="@{/updateEdit(id=${travel.id})}">编辑</a>
+                    <a th:href="@{/deleteTravel(id=${travel.id})}">删除</a>
+                    <!--<a th:href="@{/exImport}">附件</a>-->
+                </td>
+            </tr>
+    </table>
+</body>
+</html>
