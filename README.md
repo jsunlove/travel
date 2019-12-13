@@ -1,5 +1,9 @@
 # shortterm
 
+#### 项目说明
+此项目原作者为青木，代码在[码云](https://gitee.com/luckykim/travel)上.
+我只是得到授权在github上上传
+
 #### 介绍
 使用SpringBoot+Mybatis+Thyelmeaf+POI实现了一个出差事项小模块：包含新增、更新、删除、按时间或项目类型多条件查询、附件的下载、及上传（上传还未完善）等功能。
 
